@@ -16,5 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: echo Hello from Octo Organization
-
+        run: |
+          docker --version
+          docker ps
+          docker-compose --version
+          git --version
+          node --version
+          yarn --version
+          zip --version
+          jq --version
+          kubectl version
+          mysql --version
+          df -h
