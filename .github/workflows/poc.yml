@@ -25,6 +25,6 @@ jobs:
           yarn --version
           zip --version
           jq --version
-          kubectl version
+          kubectl version --client
           mysql --version
           df -h
