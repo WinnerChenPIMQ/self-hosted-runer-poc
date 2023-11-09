@@ -3,16 +3,37 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches: [ $default-branch ]
   workflow_dispatch:
 
 jobs:
-  build:
+  build-big:
     runs-on: 
       - self-hosted
       - linux
       - x64
+      - big
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: |
+          docker --version
+          docker ps
+          docker-compose --version
+          git --version
+          node --version
+          yarn --version
+          zip --version
+          jq --version
+          kubectl version --client
+          mysql --version
+          df -h
+
+  build-small:
+    runs-on: 
+      - self-hosted
+      - linux
+      - x64
+      - small
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
