@@ -6,27 +6,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-big:
-    runs-on: 
-      - self-hosted
-      - linux
-      - x64
-      - big
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run a one-line script
-        run: |
-          docker --version
-          docker ps
-          docker-compose --version
-          git --version
-          node --version
-          yarn --version
-          zip --version
-          jq --version
-          kubectl version --client
-          mysql --version
-          df -h
+  # build-big:
+  #   runs-on: 
+  #     - self-hosted
+  #     - linux
+  #     - x64
+  #     - big
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Run a one-line script
+  #       run: |
+  #         docker --version
+  #         docker ps
+  #         docker-compose --version
+  #         git --version
+  #         node --version
+  #         yarn --version
+  #         zip --version
+  #         jq --version
+  #         kubectl version --client
+  #         mysql --version
+  #         df -h
 
   build-small:
     runs-on: 
