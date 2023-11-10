@@ -32,5 +32,8 @@ jobs:
         shell: bash
       - name: check kubectl
         run: kubectl version
+      - name: deploy to eks
+        run: kubectl set image -n dev deployment/schedule schedule=pimq/schedule:dev-latest
+
 
      
